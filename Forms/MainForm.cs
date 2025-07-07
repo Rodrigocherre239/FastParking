@@ -109,6 +109,25 @@ Controls.Add(btnCerrar);
 
     TimeSpan duracion;
     decimal monto = sistema.RetirarVehiculo(placa, out duracion);
+
+    // Buscar el registro correspondiente en el historial
+    var registro = sistema.ObtenerHistorial().LastOrDefault(r => r.Placa == placa);
+
+    // Generar recibo en txt
+    if (registro != null)
+    {
+        string nombreArchivo = $"recibo_{placa}_{registro.HoraSalida:yyyyMMdd_HHmmss}.txt";
+        string recibo = $"********** RECIBO FAST PARKING **********\r\n" +
+                        $"Placa: {registro.Placa}\r\n" +
+                        $"Tipo: {registro.Tipo}\r\n" +
+                        $"Hora de ingreso: {registro.HoraIngreso:dd/MM/yyyy HH:mm}\r\n" +
+                        $"Hora de salida: {registro.HoraSalida:dd/MM/yyyy HH:mm}\r\n" +
+                        $"Duración: {registro.Tiempo.TotalMinutes:F1} minutos\r\n" +
+                        $"Monto: S/.{registro.Monto}\r\n" +
+                        $"*****************************************";
+        System.IO.File.WriteAllText(nombreArchivo, recibo);
+    }
+
     MessageBox.Show($"Tiempo: {duracion.TotalMinutes:F1} minutos. Monto: S/.{monto}");
 
     lstPlacas.Items.Remove(placa);
