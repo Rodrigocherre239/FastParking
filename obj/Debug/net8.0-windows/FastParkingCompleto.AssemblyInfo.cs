@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FastParkingCompleto")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48c4735b3d9b7f211a6492e024401ebfa9f64d50")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a12cd952910749dcd6d1651ae81ff004798c8ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("FastParkingCompleto")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FastParkingCompleto")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

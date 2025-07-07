@@ -116,7 +116,7 @@ Controls.Add(btnCerrar);
     // Generar recibo en txt
     if (registro != null)
     {
-        string nombreArchivo = $"recibo_{placa}_{registro.HoraSalida:yyyyMMdd_HHmmss}.txt";
+        string nombreArchivo = $"recibo_Vehiculo.txt";
         string recibo = $"********** RECIBO FAST PARKING **********\r\n" +
                         $"Placa: {registro.Placa}\r\n" +
                         $"Tipo: {registro.Tipo}\r\n" +
