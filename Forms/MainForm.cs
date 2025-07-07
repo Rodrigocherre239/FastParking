@@ -13,7 +13,9 @@ public class MainForm : Form
     private ComboBox cmbTipo;
     private ListBox lstPlacas;
     private Button btnCerrar;
-
+    private Label lblVehiculosActivos;
+    private Label lblTotalRecaudado;
+    private Label lblPromedioPermanencia;
 
     private Estacionamiento sistema;
 
@@ -79,6 +81,26 @@ Controls.Add(btnCerrar);
         Controls.Add(btnExportar);
         Controls.Add(lstPlacas);
     }
+// Panel de estadísticas
+Panel panelEstadisticas = new Panel()
+{
+    Top = 20,
+    Left = 350,
+    Width = 300,
+    Height = 200,
+    BackColor = System.Drawing.Color.LightSteelBlue
+};
+
+// Labels dentro del panel
+lblVehiculosActivos = new Label() { Top = 20, Left = 10, Width = 280, Text = "Vehículos activos: 0" };
+lblTotalRecaudado = new Label() { Top = 60, Left = 10, Width = 280, Text = "Total recaudado: S/ 0.00" };
+lblPromedioPermanencia = new Label() { Top = 100, Left = 10, Width = 280, Text = "Promedio permanencia: 0 min" };
+
+panelEstadisticas.Controls.Add(lblVehiculosActivos);
+panelEstadisticas.Controls.Add(lblTotalRecaudado);
+panelEstadisticas.Controls.Add(lblPromedioPermanencia);
+
+Controls.Add(panelEstadisticas);
 
     private void BtnIngresar_Click(object sender, EventArgs e)
     {
