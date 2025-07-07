@@ -116,7 +116,7 @@ lblTotalRecaudado.Font = new System.Drawing.Font("Arial", 9, System.Drawing.Font
 lblPromedioPermanencia.Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold);
 panelEstadisticas.BorderStyle = BorderStyle.FixedSingle;
 Controls.Add(panelEstadisticas);
-
+// Panel de estadísticas en tiempo real para mostrar resumen de operación
     private void BtnIngresar_Click(object sender, EventArgs e)
     {
         string placa = txtPlaca.Text.Trim().ToUpper();
