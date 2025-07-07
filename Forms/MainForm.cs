@@ -81,6 +81,18 @@ Controls.Add(btnCerrar);
         Controls.Add(btnExportar);
         Controls.Add(lstPlacas);
     }
+private void ActualizarEstadisticas()
+{
+    lblVehiculosActivos.Text = $"Vehículos activos: {sistema.ObtenerPlacasActuales().Count()}";
+
+    var historial = sistema.ObtenerHistorial();
+    decimal total = historial.Sum(h => h.Monto);
+    lblTotalRecaudado.Text = $"Total recaudado: S/ {total:F2}";
+
+    double promedio = historial.Any() ? historial.Average(h => h.Tiempo.TotalMinutes) : 0;
+    lblPromedioPermanencia.Text = $"Promedio permanencia: {promedio:F1} min";
+}
+
 // Panel de estadísticas
 Panel panelEstadisticas = new Panel()
 {
