@@ -133,6 +133,7 @@ Controls.Add(panelEstadisticas);
         sistema.IngresarVehiculo(new Vehiculo(placa, tipo));
         lstPlacas.Items.Add(placa);
         txtPlaca.Clear();
+        ActualizarEstadisticas();
     }
 
     private void BtnRetirar_Click(object sender, EventArgs e)
@@ -146,6 +147,8 @@ Controls.Add(panelEstadisticas);
     MessageBox.Show($"Tiempo: {duracion.TotalMinutes:F1} minutos. Monto: S/.{monto}");
 
     lstPlacas.Items.Remove(placa);
+    ActualizarEstadisticas();
+
 }
 
 
@@ -199,6 +202,8 @@ private void BtnCerrar_Click(object sender, EventArgs e)
     MessageBox.Show($"Se retiraron {cantidad} vehículos.\nTotal ganado: S/.{total}", "Resumen final");
 
     Application.Exit(); // Cierra la app
+    ActualizarEstadisticas();
+
 }
 
 }
