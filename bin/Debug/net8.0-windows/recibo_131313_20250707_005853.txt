@@ -1,0 +1,8 @@
+********** RECIBO FAST PARKING **********
+Placa: 131313
+Tipo: Auto
+Hora de ingreso: 07/07/2025 00:58
+Hora de salida: 07/07/2025 00:58
+Duración: 0.0 minutos
+Monto: S/.3
+*****************************************
