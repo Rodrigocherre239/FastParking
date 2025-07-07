@@ -111,7 +111,10 @@ lblPromedioPermanencia = new Label() { Top = 100, Left = 10, Width = 280, Text =
 panelEstadisticas.Controls.Add(lblVehiculosActivos);
 panelEstadisticas.Controls.Add(lblTotalRecaudado);
 panelEstadisticas.Controls.Add(lblPromedioPermanencia);
-
+lblVehiculosActivos.Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold);
+lblTotalRecaudado.Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold);
+lblPromedioPermanencia.Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold);
+panelEstadisticas.BorderStyle = BorderStyle.FixedSingle;
 Controls.Add(panelEstadisticas);
 
     private void BtnIngresar_Click(object sender, EventArgs e)
@@ -203,7 +206,5 @@ private void BtnCerrar_Click(object sender, EventArgs e)
 
     Application.Exit(); // Cierra la app
     ActualizarEstadisticas();
-
 }
-
 }
