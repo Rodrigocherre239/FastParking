@@ -351,7 +351,7 @@ private void ActualizarEstadisticas()
     // Generar recibo en txt
     if (registro != null)
     {
-        string nombreArchivo = $"recibo_{placa}_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+        string nombreArchivo = $"recibo_vehiculo.txt";
         string recibo = $"********** RECIBO FAST PARKING **********\r\n" +
                         $"Placa: {registro.Placa}\r\n" +
                         $"Tipo: {registro.Tipo}\r\n" +
