@@ -13,7 +13,9 @@ public class MainForm : Form
     private ComboBox cmbTipo;
     private ListBox lstPlacas;
     private Button btnCerrar;
-
+    private Label lblVehiculosActivos;
+    private Label lblTotalRecaudado;
+    private Label lblPromedioPermanencia;
 
     private Estacionamiento sistema;
 
@@ -79,7 +81,42 @@ Controls.Add(btnCerrar);
         Controls.Add(btnExportar);
         Controls.Add(lstPlacas);
     }
+private void ActualizarEstadisticas()
+{
+    lblVehiculosActivos.Text = $"Vehículos activos: {sistema.ObtenerPlacasActuales().Count()}";
 
+    var historial = sistema.ObtenerHistorial();
+    decimal total = historial.Sum(h => h.Monto);
+    lblTotalRecaudado.Text = $"Total recaudado: S/ {total:F2}";
+
+    double promedio = historial.Any() ? historial.Average(h => h.Tiempo.TotalMinutes) : 0;
+    lblPromedioPermanencia.Text = $"Promedio permanencia: {promedio:F1} min";
+}
+
+// Panel de estadísticas
+Panel panelEstadisticas = new Panel()
+{
+    Top = 20,
+    Left = 350,
+    Width = 300,
+    Height = 200,
+    BackColor = System.Drawing.Color.LightSteelBlue
+};
+
+// Labels dentro del panel
+lblVehiculosActivos = new Label() { Top = 20, Left = 10, Width = 280, Text = "Vehículos activos: 0" };
+lblTotalRecaudado = new Label() { Top = 60, Left = 10, Width = 280, Text = "Total recaudado: S/ 0.00" };
+lblPromedioPermanencia = new Label() { Top = 100, Left = 10, Width = 280, Text = "Promedio permanencia: 0 min" };
+
+panelEstadisticas.Controls.Add(lblVehiculosActivos);
+panelEstadisticas.Controls.Add(lblTotalRecaudado);
+panelEstadisticas.Controls.Add(lblPromedioPermanencia);
+lblVehiculosActivos.Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold);
+lblTotalRecaudado.Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold);
+lblPromedioPermanencia.Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold);
+panelEstadisticas.BorderStyle = BorderStyle.FixedSingle;
+Controls.Add(panelEstadisticas);
+// Panel de estadísticas en tiempo real para mostrar resumen de operación
     private void BtnIngresar_Click(object sender, EventArgs e)
     {
         string placa = txtPlaca.Text.Trim().ToUpper();
@@ -99,6 +136,7 @@ Controls.Add(btnCerrar);
         sistema.IngresarVehiculo(new Vehiculo(placa, tipo));
         lstPlacas.Items.Add(placa);
         txtPlaca.Clear();
+        ActualizarEstadisticas();
     }
 
     private void BtnRetirar_Click(object sender, EventArgs e)
@@ -131,6 +169,8 @@ Controls.Add(btnCerrar);
     MessageBox.Show($"Tiempo: {duracion.TotalMinutes:F1} minutos. Monto: S/.{monto}");
 
     lstPlacas.Items.Remove(placa);
+    ActualizarEstadisticas();
+
 }
 
 
@@ -184,6 +224,6 @@ private void BtnCerrar_Click(object sender, EventArgs e)
     MessageBox.Show($"Se retiraron {cantidad} vehículos.\nTotal ganado: S/.{total}", "Resumen final");
 
     Application.Exit(); // Cierra la app
+    ActualizarEstadisticas();
 }
-
 }
