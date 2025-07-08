@@ -3,8 +3,8 @@ using System;
 using System.Windows.Forms;
 using System.Linq;
 using System.Collections.Generic;
-using QRCoder; // Â¡AsegÃºrate de agregar este using!
-using System.Drawing; // Para trabajar con imÃ¡genes
+using QRCoder; // ¡Asegúrate de agregar este using!
+using System.Drawing; // Para trabajar con imágenes
 using System.IO; // Para guardar el archivo de imagen
 
 public class MainForm : Form
@@ -96,7 +96,7 @@ public class MainForm : Form
         // Panel de grilla visual de espacios
         CrearGrillaEspacios();
 
-        // Panel de estadÃ­sticas
+        // Panel de estadísticas
         panelEstadisticas = new Panel()
         {
             Top = 20,
@@ -108,7 +108,7 @@ public class MainForm : Form
         };
 
         // Labels dentro del panel
-        lblVehiculosActivos = new Label() { Top = 20, Left = 10, Width = 280, Text = "VehÃ­culos activos: 0", Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold) };
+        lblVehiculosActivos = new Label() { Top = 20, Left = 10, Width = 280, Text = "Vehículos activos: 0", Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold) };
         lblTotalRecaudado = new Label() { Top = 60, Left = 10, Width = 280, Text = "Total recaudado: S/ 0.00", Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold) };
         lblPromedioPermanencia = new Label() { Top = 100, Left = 10, Width = 280, Text = "Promedio permanencia: 0 min", Font = new System.Drawing.Font("Arial", 9, System.Drawing.FontStyle.Bold) };
 
@@ -131,10 +131,10 @@ public class MainForm : Form
             BorderStyle = BorderStyle.FixedSingle
         };
 
-        // TÃ­tulo del panel
+        // Título del panel
         Label lblTituloInfo = new Label()
         {
-            Text = "INFORMACIÃ“N DEL SISTEMA",
+            Text = "INFORMACIÓN DEL SISTEMA",
             Top = 10,
             Left = 10,
             Width = 280,
@@ -145,7 +145,7 @@ public class MainForm : Form
             ForeColor = System.Drawing.Color.White
         };
 
-        // InformaciÃ³n del sistema
+        // Información del sistema
         Label lblCapacidad = new Label()
         {
             Text = "Capacidad Total: 15 espacios",
@@ -178,7 +178,7 @@ public class MainForm : Form
 
         Label lblTarifaAuto = new Label()
         {
-            Text = "â€¢ Auto: S/ 2.00/hora",
+            Text = "• Auto: S/ 2.00/hora",
             Top = 125,
             Left = 10,
             Width = 280,
@@ -188,7 +188,7 @@ public class MainForm : Form
 
         Label lblTarifaMoto = new Label()
         {
-            Text = "â€¢ Moto: S/ 1.00/hora",
+            Text = "• Moto: S/ 1.00/hora",
             Top = 150,
             Left = 10,
             Width = 280,
@@ -198,7 +198,7 @@ public class MainForm : Form
 
         Label lblTarifaCamion = new Label()
         {
-            Text = "â€¢ CamiÃ³n: S/ 3.00/hora",
+            Text = "• Camión: S/ 3.00/hora",
             Top = 175,
             Left = 10,
             Width = 280,
@@ -209,7 +209,7 @@ public class MainForm : Form
         Label lblInstrucciones = new Label()
         {
             Text = "INSTRUCCIONES:",
-            Top = 180, // Ajusta esta posiciÃ³n si es necesario
+            Top = 180, // Ajusta esta posición si es necesario
             Left = 10,
             Width = 280,
             Height = 20,
@@ -227,11 +227,11 @@ public class MainForm : Form
         };
 
         // Las instrucciones 2 y 3 no se muestran en el panelInfo debido a la altura de 220.
-        // PodrÃ­as ajustar el Height del panelInfo o reorganizar el contenido.
-        // AquÃ­ ajusto el Top para que sean visibles si el panelInfo fuera mÃ¡s alto:
+        // Podrías ajustar el Height del panelInfo o reorganizar el contenido.
+        // Aquí ajusto el Top para que sean visibles si el panelInfo fuera más alto:
         // Label lblInst2 = new Label()
         // {
-        //     Text = "2. Seleccione tipo de vehÃ­culo",
+        //     Text = "2. Seleccione tipo de vehículo",
         //     Top = 215,
         //     Left = 10,
         //     Width = 280,
@@ -277,20 +277,20 @@ public class MainForm : Form
         Controls.Add(panelEstadisticas);
         Controls.Add(panelInfo);
 
-        // Inicializar y aÃ±adir el PictureBox para el QR
+        // Inicializar y añadir el PictureBox para el QR
         pbQRDisplay = new PictureBox()
         {
-            Top = 10,  // Ajusta la posiciÃ³n segÃºn tu diseÃ±o
-            Left = 250, // Ajusta la posiciÃ³n
-            Width = 100, // TamaÃ±o del QR
+            Top = 10,  // Ajusta la posición según tu diseño
+            Left = 250, // Ajusta la posición
+            Width = 100, // Tamaño del QR
             Height = 100,
             BorderStyle = BorderStyle.FixedSingle,
-            SizeMode = PictureBoxSizeMode.Zoom // Para que el QR se ajuste al tamaÃ±o del PictureBox
+            SizeMode = PictureBoxSizeMode.Zoom // Para que el QR se ajuste al tamaño del PictureBox
         };
         // Puedes agregar el PictureBox a un panel existente o directamente al formulario
-        // Por ahora lo dejarÃ© comentado, piensa dÃ³nde te gustarÃ­a que aparezca.
+        // Por ahora lo dejaré comentado, piensa dónde te gustaría que aparezca.
         // Controls.Add(pbQRDisplay);
-        // Si quieres que aparezca en el panel de informaciÃ³n, por ejemplo:
+        // Si quieres que aparezca en el panel de información, por ejemplo:
         // panelInfo.Controls.Add(pbQRDisplay); // Ajusta Top/Left si lo agregas a un panel
 
         ActualizarEstadisticas();
@@ -301,7 +301,7 @@ public class MainForm : Form
         int vehiculosActivos = sistema.ObtenerPlacasActuales().Count();
         int espaciosDisponibles = espacios.Length - espaciosOcupados.Count;
 
-        lblVehiculosActivos.Text = $"VehÃ­culos activos: {vehiculosActivos} / {espacios.Length}";
+        lblVehiculosActivos.Text = $"Vehículos activos: {vehiculosActivos} / {espacios.Length}";
 
         var historial = sistema.ObtenerHistorial();
         decimal total = historial.Sum(h => h.Monto);
@@ -319,7 +319,7 @@ public class MainForm : Form
         string placa = txtPlaca.Text.Trim().ToUpper();
         if (!System.Text.RegularExpressions.Regex.IsMatch(placa, @"^[A-Z0-9]{6}$"))
         {
-            MessageBox.Show("La placa debe tener exactamente 6 letras o nÃºmeros (sin espacios).");
+            MessageBox.Show("La placa debe tener exactamente 6 letras o números (sin espacios).");
             return;
         }
 
@@ -332,7 +332,7 @@ public class MainForm : Form
         // Verificar si hay espacios disponibles
         if (espaciosOcupados.Count >= espacios.Length)
         {
-            MessageBox.Show("El estacionamiento estÃ¡ lleno. No hay espacios disponibles.");
+            MessageBox.Show("El estacionamiento está lleno. No hay espacios disponibles.");
             return;
         }
 
@@ -341,7 +341,7 @@ public class MainForm : Form
 
         if (espacioAsignado == null)
         {
-            MessageBox.Show("El estacionamiento estÃ¡ lleno. No hay espacios disponibles.");
+            MessageBox.Show("El estacionamiento está lleno. No hay espacios disponibles.");
             return;
         }
 
@@ -354,12 +354,12 @@ public class MainForm : Form
         lstPlacas.Items.Add($"{placa} - {espacioAsignado}");
         lstEspacios.Items.Add($"{espacioAsignado}: {placa}");
 
-        // --- GeneraciÃ³n del CÃ³digo QR ---
-        // El contenido del QR podrÃ­a ser la placa, o una cadena JSON con mÃ¡s info.
+        // --- Generación del Código QR ---
+        // El contenido del QR podría ser la placa, o una cadena JSON con más info.
         // Para simplicidad, usaremos la placa.
         string qrContent = placa;
-        GenerateAndShowQR(qrContent, placa); // Llama a la nueva funciÃ³n de generaciÃ³n de QR
-        // --- Fin GeneraciÃ³n del CÃ³digo QR ---
+        GenerateAndShowQR(qrContent, placa); // Llama a la nueva función de generación de QR
+        // --- Fin Generación del Código QR ---
 
         txtPlaca.Clear();
         ActualizarEstadisticas();
@@ -386,18 +386,18 @@ public class MainForm : Form
         {
             // Modificado: Agrega timestamp al nombre del recibo
             string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-            string nombreArchivo = $"recibo_{placa}_{timestamp}.txt"; // Nombre de archivo Ãºnico
+            string nombreArchivo = $"recibo_{placa}_{timestamp}.txt"; // Nombre de archivo único
             string recibo = $"********** RECIBO FAST PARKING **********\r\n" +
                             $"Placa: {registro.Placa}\r\n" +
                             $"Tipo: {registro.Tipo}\r\n" +
                             $"Espacio: {espacioLiberado}\r\n" +
                             $"Hora de ingreso: {registro.HoraIngreso:dd/MM/yyyy HH:mm}\r\n" +
                             $"Hora de salida: {registro.HoraSalida:dd/MM/yyyy HH:mm}\r\n" +
-                            $"DuraciÃ³n: {registro.Tiempo.TotalMinutes:F1} minutos\r\n" +
+                            $"Duración: {registro.Tiempo.TotalMinutes:F1} minutos\r\n" +
                             $"Monto: S/.{registro.Monto}\r\n" +
                             $"*****************************************";
             System.IO.File.WriteAllText(nombreArchivo, recibo);
-            MessageBox.Show($"Recibo generado: {nombreArchivo}"); // Mensaje para indicar que se creÃ³ el recibo
+            MessageBox.Show($"Recibo generado: {nombreArchivo}"); // Mensaje para indicar que se creó el recibo
         }
 
         MessageBox.Show($"Tiempo: {duracion.TotalMinutes:F1} minutos. Monto: S/.{monto}");
@@ -427,7 +427,7 @@ public class MainForm : Form
             ws.Cell(1, 1).Value = "Cantidad";
             ws.Cell(1, 2).Value = "Placa";
             ws.Cell(1, 3).Value = "Tipo";
-            ws.Cell(1, 4).Value = "DuraciÃ³n (min)"; // Cambiado para claridad
+            ws.Cell(1, 4).Value = "Duración (min)"; // Cambiado para claridad
             ws.Cell(1, 5).Value = "Hora Ingreso";
             ws.Cell(1, 6).Value = "Hora Salida";
             ws.Cell(1, 7).Value = "Monto S/";
@@ -465,10 +465,10 @@ public class MainForm : Form
         int cantidad = historial.Count();
         decimal total = historial.Sum(r => r.Monto);
 
-        MessageBox.Show($"Se retiraron {cantidad} vehÃ­culos.\nTotal ganado: S/.{total}", "Resumen final");
+        MessageBox.Show($"Se retiraron {cantidad} vehículos.\nTotal ganado: S/.{total}", "Resumen final");
 
         Application.Exit(); // Cierra la app
-        // ActualizarEstadisticas(); // Ya no es necesario aquÃ­ al cerrar la aplicaciÃ³n
+        // ActualizarEstadisticas(); // Ya no es necesario aquí al cerrar la aplicación
     }
     private void CrearGrillaEspacios()
     {
@@ -482,7 +482,7 @@ public class MainForm : Form
             BackColor = System.Drawing.Color.LightGray
         };
 
-        // Agregar tÃ­tulo
+        // Agregar título
         Label lblTitulo = new Label()
         {
             Text = "Estado de Espacios (Verde: Disponible, Rojo: Ocupado)",
@@ -530,7 +530,7 @@ public class MainForm : Form
                 // Espacio ocupado - color rojo
                 lblEspaciosArray[i].BackColor = System.Drawing.Color.Red;
                 lblEspaciosArray[i].ForeColor = System.Drawing.Color.White;
-                // Ajusta el texto para que la placa se vea bien, quizÃ¡s truncÃ¡ndola o reduciendo la fuente si el espacio es pequeÃ±o.
+                // Ajusta el texto para que la placa se vea bien, quizás truncándola o reduciendo la fuente si el espacio es pequeño.
                 // Por ahora, solo muestra la placa.
                 lblEspaciosArray[i].Text = $"{espacio}\n{espaciosOcupados[espacio]}";
             }
@@ -544,19 +544,19 @@ public class MainForm : Form
         }
     }
 
-    // --- Nueva FunciÃ³n para Generar y Mostrar QR ---
+    // --- Nueva Función para Generar y Mostrar QR ---
     private void GenerateAndShowQR(string content, string placa)
     {
         try
         {
             using (QRCodeGenerator qrGenerator = new QRCodeGenerator())
             {
-                // Nivel de correcciÃ³n de error (High, Medium, Low, Quartile)
+                // Nivel de corrección de error (High, Medium, Low, Quartile)
                 QRCodeData qrCodeData = qrGenerator.CreateQrCode(content, QRCodeGenerator.ECCLevel.Q);
                 using (QRCode qrCode = new QRCode(qrCodeData))
                 {
                     // Crear la imagen del QR
-                    Bitmap qrCodeImage = qrCode.GetGraphic(20); // 20 es el tamaÃ±o de los "mÃ³dulos" (cuadritos) del QR
+                    Bitmap qrCodeImage = qrCode.GetGraphic(20); // 20 es el tamaño de los "módulos" (cuadritos) del QR
 
                     // 1. Mostrar el QR en un PictureBox (si lo agregaste al formulario)
                     // if (pbQRDisplay != null)
@@ -571,11 +571,11 @@ public class MainForm : Form
                     qrCodeImage.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
                     MessageBox.Show($"QR generado y guardado en: {fileName}", "QR Generado");
 
-                    // 3. (Opcional) Abrir el archivo de imagen automÃ¡ticamente
+                    // 3. (Opcional) Abrir el archivo de imagen automáticamente
                     // System.Diagnostics.Process.Start(filePath);
 
                     // 4. (Opcional) Mostrar el QR en una ventana emergente temporal
-                    // Si el QR debe imprimirse, esta serÃ­a una previsualizaciÃ³n.
+                    // Si el QR debe imprimirse, esta sería una previsualización.
                     ShowQrPopup(qrCodeImage, placa);
                 }
             }
@@ -591,14 +591,14 @@ public class MainForm : Form
         Form qrForm = new Form();
         qrForm.Text = $"Ticket de Acceso - {placa}";
         qrForm.StartPosition = FormStartPosition.CenterScreen;
-        qrForm.Size = new Size(350, 450); // Ajusta el tamaÃ±o de la ventana
+        qrForm.Size = new Size(350, 450); // Ajusta el tamaño de la ventana
         qrForm.FormBorderStyle = FormBorderStyle.FixedDialog; // Sin maximizar/minimizar
         qrForm.MaximizeBox = false;
         qrForm.MinimizeBox = false;
 
         Label lblTitulo = new Label()
         {
-            Text = "Â¡Bienvenido a Fast Parking!",
+            Text = "¡Bienvenido a Fast Parking!",
             Top = 10,
             Left = 10,
             Width = 300,
@@ -644,15 +644,15 @@ public class MainForm : Form
         {
             Text = "Imprimir Ticket",
             Top = 320,
-            Left = (qrForm.Width - 150) / 2 - 10, // Centrar el botÃ³n
+            Left = (qrForm.Width - 150) / 2 - 10, // Centrar el botón
             Width = 150,
             Height = 30
         };
         btnImprimir.Click += (s, ev) =>
         {
-            // LÃ³gica para imprimir el QR
-            MessageBox.Show("Funcionalidad de impresiÃ³n no implementada. Â¡Puedes aÃ±adirla aquÃ­!", "Imprimir");
-            // Para imprimir, necesitarÃ­as usar System.Drawing.Printing
+            // Lógica para imprimir el QR
+            MessageBox.Show("Funcionalidad de impresión no implementada. ¡Puedes añadirla aquí!", "Imprimir");
+            // Para imprimir, necesitarías usar System.Drawing.Printing
             // y configurar un PrintDocument y PrintPreviewDialog.
         };
 
@@ -667,10 +667,10 @@ public class MainForm : Form
 }
 // Las clases Vehiculo, Estacionamiento, TarifaPorTipoVehiculo, HistorialSalida,
 // y el enum TipoVehiculo deben estar definidas en tu proyecto.
-// AsegÃºrate de que esas clases existan y sean accesibles.
+// Asegúrate de que esas clases existan y sean accesibles.
 
 /*
-// EJEMPLO de cÃ³mo podrÃ­an ser tus otras clases (si no las tienes ya):
+// EJEMPLO de cómo podrían ser tus otras clases (si no las tienes ya):
 
 public enum TipoVehiculo { Auto, Moto, Camion }
 
@@ -698,7 +698,7 @@ public class RegistroSalida
     public DateTime HoraSalida { get; set; }
     public TimeSpan Tiempo { get; set; }
     public decimal Monto { get; set; }
-    public string EspacioAsignado { get; set; } // AÃ±adido para el recibo
+    public string EspacioAsignado { get; set; } // Añadido para el recibo
 
     public RegistroSalida(string placa, TipoVehiculo tipo, DateTime horaIngreso, DateTime horaSalida, TimeSpan tiempo, decimal monto, string espacioAsignado)
     {
@@ -738,7 +738,7 @@ public class TarifaPorTipoVehiculo : ITarifa
                 break;
         }
 
-        // Calcula el costo redondeando al minuto superior para el cÃ¡lculo por hora
+        // Calcula el costo redondeando al minuto superior para el cálculo por hora
         // Si dura 1 hora y 1 minuto, cobra 2 horas.
         int horasCompletas = (int)Math.Ceiling(duracion.TotalHours);
         return horasCompletas * tarifaPorHora;
@@ -755,7 +755,7 @@ public class Estacionamiento
     public Estacionamiento(ITarifa tarifa, HistorialSalida historialSalidaManager)
     {
         vehiculosActuales = new Dictionary<string, Vehiculo>();
-        historialSalidas = new List<RegistroSalida>(); // Se mantiene para el reporte y cÃ¡lculo
+        historialSalidas = new List<RegistroSalida>(); // Se mantiene para el reporte y cálculo
         _tarifa = tarifa;
         _historialSalidaManager = historialSalidaManager;
     }
@@ -783,7 +783,7 @@ public class Estacionamiento
                 monto,
                 vehiculo.EspacioAsignado // Guarda el espacio asignado en el historial
             );
-            historialSalidas.Add(registro); // AÃ±adir al historial local
+            historialSalidas.Add(registro); // Añadir al historial local
             _historialSalidaManager.AgregarRegistro(registro); // Y al manager si lo usas para persistencia
             vehiculosActuales.Remove(placa);
             return monto;
@@ -804,7 +804,7 @@ public class Estacionamiento
 }
 
 // Clase para manejar el historial de salidas (si no lo tienes)
-// Esta clase podrÃ­a ser la responsable de guardar los recibos a disco si es necesario.
+// Esta clase podría ser la responsable de guardar los recibos a disco si es necesario.
 public class HistorialSalida
 {
     private List<RegistroSalida> _registros;
@@ -817,8 +817,8 @@ public class HistorialSalida
     public void AgregarRegistro(RegistroSalida registro)
     {
         _registros.Add(registro);
-        // AquÃ­ podrÃ­as agregar lÃ³gica para guardar el registro en una base de datos
-        // o en un archivo persistente si lo deseas, aparte de la generaciÃ³n de recibo TXT.
+        // Aquí podrías agregar lógica para guardar el registro en una base de datos
+        // o en un archivo persistente si lo deseas, aparte de la generación de recibo TXT.
     }
 
     public IEnumerable<RegistroSalida> ObtenerTodosLosRegistros()

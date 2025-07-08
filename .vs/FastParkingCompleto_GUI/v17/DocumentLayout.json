@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Car\\FastParking\\",
+  "WorkspaceRootPath": "C:\\Users\\USER\\source\\repos\\Fast parking Rodrigo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B148D0A2-1331-8F1F-6A89-CDB42A612F79}|FastParkingCompleto.csproj|c:\\car\\fastparking\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B148D0A2-1331-8F1F-6A89-CDB42A612F79}|FastParkingCompleto.csproj|c:\\users\\user\\source\\repos\\fast parking rodrigo\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B148D0A2-1331-8F1F-6A89-CDB42A612F79}|FastParkingCompleto.csproj|solutionrelative:forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,20 +14,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Car\\FastParking\\Forms\\MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\Fast parking Rodrigo\\Forms\\MainForm.cs",
               "RelativeDocumentMoniker": "Forms\\MainForm.cs",
-              "ToolTip": "C:\\Car\\FastParking\\Forms\\MainForm.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\Fast parking Rodrigo\\Forms\\MainForm.cs",
               "RelativeToolTip": "Forms\\MainForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-07T05:26:22.119Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
