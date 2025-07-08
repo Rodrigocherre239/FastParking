@@ -153,15 +153,9 @@ FastParking/
 - [ ] API REST
 - [ ] Aplicación web
 
-## 👨‍💻 Desarrollador
+## 👨‍💻 Desarrolladores
 
-**GhostWarrior1211**
-- GitHub: [@GhostWarrior1211](https://github.com/GhostWarrior1211)
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
----
-
-⭐ **¡Si te gusta este proyecto, dale una estrella!** ⭐
+**Taipe Quintana Ivan Nelson**
+**Rodrigo Manuel Cherre Santillan**
+**Jorge Hiroshi Chung Quispe**
+**Bryan Alexander Arce Muñoz**
