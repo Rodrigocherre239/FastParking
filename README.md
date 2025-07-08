@@ -156,6 +156,9 @@ FastParking/
 ## 👨‍💻 Desarrolladores
 
 **Taipe Quintana Ivan Nelson**
+
 **Rodrigo Manuel Cherre Santillan**
+
 **Jorge Hiroshi Chung Quispe**
+
 **Bryan Alexander Arce Muñoz**
