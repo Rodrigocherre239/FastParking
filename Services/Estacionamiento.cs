@@ -44,4 +44,14 @@ public class Estacionamiento
     {
         return _historial.ObtenerHistorial();
     }
+
+    public bool EspacioOcupado(string espacio)
+    {
+        return _vehiculosEnParqueo.Values.Any(v => v.EspacioAsignado == espacio);
+    }
+
+    public List<string> ObtenerEspaciosOcupados()
+    {
+        return _vehiculosEnParqueo.Values.Select(v => v.EspacioAsignado).ToList();
+    }
 }
